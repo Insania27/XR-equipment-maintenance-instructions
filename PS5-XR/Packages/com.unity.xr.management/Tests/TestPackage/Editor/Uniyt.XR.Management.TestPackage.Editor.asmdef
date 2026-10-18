@@ -1,0 +1,18 @@
+{
+  "name": "Unity.XR.Management.TestPackage.Editor",
+  "references": [
+    "Unity.XR.Management.Editor",
+    "Unity.XR.Management",
+    "Unity.XR.Management.TestPackage"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTSPS5_XR_RUN_VENDOR_TESTS"
+  ]
+}

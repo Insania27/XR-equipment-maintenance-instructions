@@ -1,0 +1,14 @@
+{
+  "name": "UnityEngine.SpatialTracking.Tests",
+  "references": [
+    "UnityEngine.SpatialTracking"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTSPS5_XR_RUN_VENDOR_TESTS"
+  ]
+}

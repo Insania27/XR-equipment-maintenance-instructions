@@ -1,0 +1,16 @@
+{
+  "name": "Unity.Mathematics.Tests",
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "references": [
+    "Unity.Mathematics"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "allowUnsafeCode": true,
+  "defineConstraints": [
+    "PS5_XR_RUN_VENDOR_TESTS"
+  ]
+}

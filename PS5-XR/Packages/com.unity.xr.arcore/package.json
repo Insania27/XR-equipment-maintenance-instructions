@@ -1,0 +1,34 @@
+{
+  "name": "com.unity.xr.arcore",
+  "displayName": "Google ARCore XR Plugin",
+  "version": "6.3.5",
+  "unity": "6000.0",
+  "description": "Provides native Google ARCore integration for use with Unity's multi-platform XR API.\nSupports the following features:\n-Efficient Background Rendering\n-Horizontal Planes\n-Depth Data\n-Anchors\n-Hit Testing\n-Occlusion",
+  "keywords": [
+    "arcore",
+    "ar",
+    "augmented",
+    "xr",
+    "reality",
+    "core"
+  ],
+  "dependencies": {
+    "com.unity.xr.arfoundation": "6.3.5",
+    "com.unity.xr.core-utils": "2.2.2",
+    "com.unity.xr.management": "4.4.0",
+    "com.unity.modules.androidjni": "1.0.0",
+    "com.unity.modules.unitywebrequest": "1.0.0"
+  },
+  "_upm": {
+    "changelog": "### Changed\n\n- Changed AR Foundation dependency version from 6.3.4 to 6.3.5.\n\n### Fixed\n\n- Fixed Vulkan backend applying unnecessary color space conversions to AR camera background, causing over-brightness in Gamma color space.\n- Fixed an issue where Android builds on newest versions of Unity would fail due to the upgraded version of Gradle used by those Editor versions. Refer to [Discussions](https://discussions.unity.com/t/info-android-gradle-9-1-0-agp-9-0-0-update-in-unity-6-4/1709062) for more information."
+  },
+  "upmCi": {
+    "footprint": "758a11935e35ee855d523736554c4cd27cb78f4d"
+  },
+  "documentationUrl": "https://docs.unity3d.com/Packages/com.unity.xr.arcore@6.3/manual/index.html",
+  "repository": {
+    "url": "https://github.cds.internal.unity3d.com/unity/arfoundation.git",
+    "type": "git",
+    "revision": "8885191ed97bf5ea1b49e566bae3c0a86c010296"
+  }
+}

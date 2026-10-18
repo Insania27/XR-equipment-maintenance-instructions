@@ -1,0 +1,14 @@
+PS5-XR/[Ll]ibrary/
+PS5-XR/[Tt]emp/
+PS5-XR/[Oo]bj/
+PS5-XR/[Ll]ogs/
+PS5-XR/[Uu]ser[Ss]ettings/
+PS5-XR/Builds/
+PS5-XR/.vs/
+PS5-XR/*.csproj
+PS5-XR/*.sln
+PS5-XR/*.slnx
+PS5-XR/*.user
+PS5-XR/Vendor/
+PS5-XR/validation/
+validation/

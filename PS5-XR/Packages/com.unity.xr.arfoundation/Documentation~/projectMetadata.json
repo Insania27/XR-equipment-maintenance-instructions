@@ -1,0 +1,10 @@
+{
+    "xref": [
+        "com.unity.xr.arkit@6.3",
+        "com.unity.xr.arcore@6.3",
+        "com.unity.xr.meta-openxr@2.3",
+        "com.unity.xr.androidxr-openxr",
+        "com.unity.polyspatial.visionos",
+        "com.unity.visualscripting"
+    ]
+}
