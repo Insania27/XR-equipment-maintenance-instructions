@@ -47,6 +47,8 @@ namespace Ps5Maintenance.Editor
                 AssetDatabase.CreateAsset(new Material(Shader.Find("Standard")), overlayMaterialPath);
             PlayerSettings.companyName = "StudentProject";
             PlayerSettings.productName = "PS5 XR Maintenance";
+            PlayerSettings.bundleVersion = "1.1";
+            PlayerSettings.Android.bundleVersionCode = 2;
             PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android, "ru.student.ps5xr");
             PlayerSettings.defaultScreenWidth = 1100;
             PlayerSettings.defaultScreenHeight = 1500;
@@ -55,6 +57,7 @@ namespace Ps5Maintenance.Editor
             PlayerSettings.fullScreenMode = FullScreenMode.Windowed;
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
+            PlayerSettings.Android.targetSdkVersion = (AndroidSdkVersions)36;
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
             PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.Android, false);
             PlayerSettings.SetGraphicsAPIs(BuildTarget.Android, new[] { UnityEngine.Rendering.GraphicsDeviceType.OpenGLES3 });
@@ -114,6 +117,8 @@ namespace Ps5Maintenance.Editor
             pose.rotationInput = new InputActionProperty(new InputAction("AR rotation", binding: "<HandheldARInputDevice>/deviceRotation"));
             pose.ignoreTrackingState = true;
             var manager = origin.AddComponent<ARTrackedImageManager>();
+            var anchorManager = origin.AddComponent<ARAnchorManager>();
+            anchorManager.enabled = false;
             manager.referenceLibrary = library;
             manager.enabled = false;
             var anchor = new GameObject("Marker-relative instruction");
@@ -184,6 +189,21 @@ namespace Ps5Maintenance.Editor
             });
             if (report.summary.result != BuildResult.Succeeded) throw new Exception("Preview build failed: " + report.summary.result);
             Debug.Log("PS5_XR_PREVIEW_BUILD_PASSED");
+        }
+
+        [MenuItem("PS5 XR/Собрать APK для Android")]
+        public static void BuildAndroid()
+        {
+            CreateProject();
+            EditorUserBuildSettings.buildAppBundle = false;
+            EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
+            Directory.CreateDirectory("Builds/Android");
+            var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions {
+                scenes = new[] { ScenePath }, target = BuildTarget.Android,
+                locationPathName = "Builds/Android/PS5-XR.apk", options = BuildOptions.Development
+            });
+            if (report.summary.result != BuildResult.Succeeded) throw new Exception("APK build failed: " + report.summary.result);
+            Debug.Log("PS5_XR_ANDROID_APK_PASSED");
         }
     }
 }
